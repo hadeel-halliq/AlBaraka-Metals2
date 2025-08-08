@@ -4,6 +4,15 @@ import Tittle from "../../Home/Components/Tittle";
 import FormInput from "./FormInput";
 import Button from "../../../Components/Common/Button";
 
+const inputVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function EmailContactForm() {
   return (
     <div className="bg-white my-10 rounded-xl border-t-4 border-t-primary shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] ">
@@ -12,7 +21,13 @@ export default function EmailContactForm() {
         املأ النموذج التالي وسيقوم أحد ممثلينا بالتواصل بك في أقرب وقت ممكن
       </p>
       <form className="flex flex-col place-items-center gap-7 lg:grid lg:grid-cols-3 ">
-        <div className="w-fit flex flex-col gap-1 text-right">
+        <motion.div
+          variants={inputVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }} 
+          className="w-fit flex flex-col gap-1 text-right"
+        >
           <label htmlFor="message" className="font-semibold">
             الرسالة
           </label>
@@ -23,7 +38,8 @@ export default function EmailContactForm() {
             placeholder="اكتب رسالتك هنا"
             required
           ></textarea>
-        </div>
+        </motion.div>
+
         <FormInput
           label="البريد الالكتروني"
           id="2"
@@ -31,6 +47,7 @@ export default function EmailContactForm() {
           name="email"
           placeholder="example@domain.com"
         />
+
         <FormInput
           label="الاسم كامل"
           id="1"
@@ -38,9 +55,16 @@ export default function EmailContactForm() {
           name="name"
           placeholder="ادخل اسمك كامل"
         />
-        <div className="lg:col-span-3 mb-14">
+
+        <motion.div
+          variants={inputVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0 }}
+          className="lg:col-span-3 mb-14"
+        >
           <Button buttonName="إرسال رسالتك" buttonStyle="mainStyle" />
-        </div>
+        </motion.div>
       </form>
     </div>
   );

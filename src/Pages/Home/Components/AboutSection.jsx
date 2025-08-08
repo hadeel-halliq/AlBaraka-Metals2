@@ -77,7 +77,7 @@ export default function AboutSection() {
               variants={createImageVariant(direction)}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: false, amount: 0 }}
               src={src}
               alt={alt}
               className={`${className} w-[140px] sm:w-[180px] md:w-[230px]`}
@@ -91,7 +91,7 @@ export default function AboutSection() {
           variants={textContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: false, amount: 0 }}
         >
           <motion.h2
             variants={textItem}
@@ -131,3 +131,4 @@ export default function AboutSection() {
     </div>
   );
 }
+

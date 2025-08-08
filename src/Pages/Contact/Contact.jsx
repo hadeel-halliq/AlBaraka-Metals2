@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+
 import ContactCard from "./Components/ContactCard";
 
 import locationIcon2 from "../../images/locationIcon2.png";
@@ -6,7 +8,7 @@ import phoneIcon from "../../images/phoneIcon.png";
 import emailIcon from "../../images/emailIcon.png";
 import EmailContactForm from "./Components/EmailContactForm";
 
-import { useEffect } from "react";
+
 
 const contactDetails = [
   {
@@ -54,6 +56,7 @@ export default function Contact() {
     document.title = "تواصل معنا | معادن البركة";
   }, []);
 
+
   return (
     <div className="bg-backGroundColor pt-28 pb-20">
       <div className="container mx-auto px-10 overflow-hidden">
@@ -61,7 +64,7 @@ export default function Contact() {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: false, amount: 0 }}
           className="grid gap-5 place-items-center grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(350px,1fr))]"
         >
           {contactDetails.map((item, index) => (

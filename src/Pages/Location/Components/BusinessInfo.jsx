@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import InfoItem from "./InfoItem";
 
 import manager from "../../../images/manager.png";
@@ -32,19 +34,47 @@ const infoData = [
   },
 ];
 
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export default function BusinessInfo() {
   return (
-    <div className="bg-backGroundColor mt-6 p-5 rounded-xl flex flex-col-reverse  lg:flex lg:flex-row lg:justify-between">
+    <motion.div
+      variants={containerVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+      className="bg-backGroundColor mt-6 p-5 rounded-xl flex flex-col-reverse  lg:flex lg:flex-row lg:justify-between"
+    >
       {infoData.map((item, index) => (
-        <InfoItem
-          key={index}
-          icon={item.icon}
-          title={item.title}
-          label={item.label}
-          labelType={item.labelType}
-          href={item.href}
-        />
+        <motion.div key={index} variants={itemVariant}>
+          <InfoItem
+            icon={item.icon}
+            title={item.title}
+            label={item.label}
+            labelType={item.labelType}
+            href={item.href}
+          />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }

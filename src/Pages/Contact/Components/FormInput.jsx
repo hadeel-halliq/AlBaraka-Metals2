@@ -1,3 +1,14 @@
+import { motion } from "framer-motion";
+
+const inputVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function FormInput({
   id,
   label,
@@ -9,7 +20,13 @@ export default function FormInput({
   onChange,
 }) {
   return (
-    <div className={`w-fit flex flex-col gap-1 text-right ${order}`}>
+    <motion.div
+      variants={inputVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false }}
+      className={`w-fit flex flex-col gap-1 text-right ${order}`}
+    >
       <label htmlFor={id} className="font-bold">
         {label}
       </label>
@@ -23,6 +40,6 @@ export default function FormInput({
         onChange={onChange}
         required
       />
-    </div>
+    </motion.div>
   );
 }
