@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../../Components/Common/Button';
-import error from "../../images/error.jpg"
+import error from "../../images/404.png"
 
 const Error = () => {
 

@@ -1,6 +1,6 @@
 import FooterList from "../Components/Common/FooterList";
 
-import logo from "../images/logo.jpg";
+import logo from "../images/icon-gray.png";
 import minPhone from "../images/minPhone.png";
 import minLocation from "../images/minLocation.png";
 import minMail from "../images/minMail.png";
@@ -12,7 +12,7 @@ const contactItems = [
     href: "tel:+963948888330",
     external: true,
   },
-  { icon: minLocation, label: "سوريا، حلب، حمص", external: true },
+  { icon: minLocation, label: "سوريا، حلب", external: true },
   {
     icon: minMail,
     label: "info@albarakametal.com",
