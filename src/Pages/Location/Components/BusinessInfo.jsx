@@ -61,7 +61,7 @@ export default function BusinessInfo() {
       variants={containerVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0 }}
       className="bg-backGroundColor mt-6 p-5 rounded-xl flex flex-col-reverse  lg:flex lg:flex-row lg:justify-between"
     >
       {infoData.map((item, index) => (

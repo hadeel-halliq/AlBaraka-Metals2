@@ -23,8 +23,7 @@ export default function FormInput({
     <motion.div
       variants={inputVariant}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false }}
+      animate="visible"
       className={`w-fit flex flex-col gap-1 text-right ${order}`}
     >
       <label htmlFor={id} className="font-bold">

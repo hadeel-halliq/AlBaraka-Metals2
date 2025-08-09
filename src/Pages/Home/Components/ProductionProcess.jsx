@@ -88,7 +88,7 @@ export default function ProductionProcess() {
             variants={stepsContainerVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0 }}
           >
             {stepsData.map((step, index) => (
               <motion.div key={index} variants={stepItemVariant}>
@@ -105,7 +105,7 @@ export default function ProductionProcess() {
             variants={videoVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0 }}
           >
             {/* <ServicesCard
               videoSrc={albarakaVideo}

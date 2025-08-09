@@ -44,7 +44,7 @@ export default function Locations({ mapSrc, imageSrc }) {
               variants={mapVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0 }}
+              viewport={{ once: true, amount: 0 }}
             ></motion.iframe>
             <motion.img
               src={imageSrc}
@@ -52,7 +52,7 @@ export default function Locations({ mapSrc, imageSrc }) {
               variants={imageVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0 }}
+              viewport={{ once: true, amount: 0 }}
             />
           </>
         )}

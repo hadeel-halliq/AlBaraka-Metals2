@@ -44,7 +44,7 @@ export default function ProductsImages() {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0 }}
+          viewport={{ once: true, amount: 0 }}
           className="grid place-items-center sm:grid-cols-2 gap-5 md:gap-3 lg:gap-4 xl:gap-5 md:grid-cols-[repeat(auto-fit,minmax(290px,1fr))] "
         >
           {productsImages.map((product, index) => (

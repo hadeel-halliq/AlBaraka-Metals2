@@ -42,7 +42,7 @@ export default function ProductsSection() {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
         >
           {productsImages.map((product, index) => (
             <motion.div key={index} variants={productVariant}>

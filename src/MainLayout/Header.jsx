@@ -25,7 +25,7 @@ export default function Header() {
 
   
   return (
-    <header className={`w-full fixed  z-100 bg-backGroundColor py-6 transition-all duration-300 ease-in-out ${isScrolled ? "shadow-md translate-y-0" : "shadow-none -translate-y-1"}`}>
+    <header className={`w-full fixed  z-100 bg-backGroundColor pt-5 pb-2 transition-all duration-300 ease-in-out ${isScrolled ? "shadow-md translate-y-0 rounded-b-2xl" : "shadow-none -translate-y-1"}`}>
       <div className="container mx-auto px-10">
         <div className="py-1.5 px-3 flex flex-row-reverse md:flex-row justify-between items-center border border-primary rounded-2xl ">
           <Link to="/">

@@ -63,8 +63,7 @@ export default function Contact() {
         <motion.div
           variants={containerVariant}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0 }}
+          animate="visible"
           className="grid gap-5 place-items-center grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(350px,1fr))]"
         >
           {contactDetails.map((item, index) => (

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+
 import ServicesCard from "./ServicesCard";
 
 import iron1 from "../../../images/iron1.png";
 import iron2 from "../../../images/iron2.png";
 import iron3 from "../../../images/iron3.png";
 import Tittle from "./Tittle";
+
 
 const services = [
   {
@@ -62,7 +64,7 @@ export default function ServicesSection() {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0}}
           className="grid gap-5 place-items-center grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
         >
           {services.map((service, index) => (
