@@ -1,4 +1,4 @@
-import FooterList from "../Components/Common/FooterList";
+import FooterList from "./Common/FooterList";
 
 import logo from "../images/icon-gray.png";
 import minPhone from "../images/minPhone.png";
@@ -32,23 +32,30 @@ const services = [
   { label: "سحب بواري" },
   { label: "صفائح حديد" },
 ];
+
+const footerSections = [
+  { title: "روابط سريعة", items: quickLinks },
+  { title: "خدماتنا", items: services },
+  { title: "للتواصل معنا", items: contactItems },
+];
+
 export default function Footer() {
   return (
     <div className="container mx-auto px-10 border-t border-t-primary">
-      <div className="pt-5 flex flex-col gap-6 items-center sm:flex sm:flex-row-reverse sm:items-start  justify-between">
+      <div className="pt-5 flex flex-col gap-6 items-center sm:flex sm:flex-row-reverse sm:items-center  justify-between">
         <div className="hidden md:w-[200px] lg:w-[300px] md:flex flex-col items-center gap-3 p-2.5">
           <img
             src={logo}
-            className="md:w-[140px] md:h-[100px] lg:w-[200px] lg:h-[130px] xl:w-[260px] xl:h-[150px]  rounded"
+            className="md:w-[140px] md:h-[100px] lg:w-[200px] lg:h-[130px] rounded"
           />
           <p dir="rtl" className=" text-center text-sm sm:block sm:text-sm ">
             نحن رواد في مجال الصناعات المعدنية منذ أكثر من 25 عاماً نقدم منتجات
             عالية الجودة بأسعار تنافسية.
           </p>
         </div>
-        <FooterList title="روابط سريعة" items={quickLinks} />
-        <FooterList title="خدماتنا" items={services} />
-        <FooterList title="للتواصل معنا" items={contactItems} />
+        {footerSections.map((section, index) => (
+          <FooterList key={index} title={section.title} items={section.items} />
+        ))}
       </div>
     </div>
   );

@@ -1,10 +1,16 @@
-import { motion, AnimatePresence  } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import Button from "../../../Components/Common/Button";
 import StatisticsButton from "./StatisticsButton";
 
 import ironFactory from "../../../images//ironFactory.png";
+
+const statisticsData = [
+  { paragraphOne: "35 سنة", paragraphTwo: "من الخبرة" },
+  { paragraphOne: "+150", paragraphTwo: "عميل دائم" },
+  { paragraphOne: "+10.000", paragraphTwo: "مشروع ناجح" },
+];
 
 const containerVariant = {
   hidden: { opacity: 0, x: 30 },
@@ -37,14 +43,13 @@ export default function HeroSection() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShow(true), 100); // تأخير صغير لظهور الأنميشن
+    const timeout = setTimeout(() => setShow(true), 100); 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <div className="bg-backGroundColor pt-40 pb-20 min-h-[500px]">
       <div className="container mx-auto px-10 overflow-hidden flex flex-col items-center gap-7 md:flex md:flex-row justify-between">
-
         <AnimatePresence>
           {show && (
             <>
@@ -72,7 +77,8 @@ export default function HeroSection() {
                   variants={childVariant}
                   className="font-bold text-xl sm:text-2xl lg:text-3xl"
                 >
-                  مرحبًا بكم في <span className="text-primary">شركة البركة</span>
+                  مرحبًا بكم في{" "}
+                  <span className="text-primary">شركة البركة</span>
                 </motion.h1>
                 <motion.div
                   variants={childVariant}
@@ -90,9 +96,14 @@ export default function HeroSection() {
                   />
                 </div>
                 <div className="flex gap-3">
-                  <StatisticsButton paragraphOne="35 سنة" paragraphTwo="من الخبرة" />
-                  <StatisticsButton paragraphOne="+150" paragraphTwo="عميل دائم" />
-                  <StatisticsButton paragraphOne="+10.000" paragraphTwo="مشروع ناجح" />
+                  {statisticsData.map((item, index) => (
+                    <StatisticsButton
+                      key={index}
+                      paragraphOne={item.paragraphOne}
+                      paragraphTwo={item.paragraphTwo}
+                      noHover
+                    />
+                  ))}
                 </div>
               </motion.div>
             </>

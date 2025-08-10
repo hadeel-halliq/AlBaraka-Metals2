@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "../MainLayout/NavBar";
 import MainIcon from "../images/icon-gray.png";
 
 import { useEffect, useState } from "react";

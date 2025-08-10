@@ -21,7 +21,6 @@ export default function EmailContactForm() {
         املأ النموذج التالي وسيقوم أحد ممثلينا بالتواصل بك في أقرب وقت ممكن
       </p>
       <form className="flex flex-col place-items-center gap-7 lg:grid lg:grid-cols-2 ">
-
         <FormInput
           label="البريد الالكتروني"
           id="2"
@@ -40,14 +39,15 @@ export default function EmailContactForm() {
         <motion.div
           variants={inputVariant}
           initial="hidden"
-          animate="visible" 
+          animate="visible"
           className="w-fit flex flex-col gap-1 text-right lg:col-span-3"
         >
           <label htmlFor="message" className="font-semibold">
             الرسالة
           </label>
           <textarea
-            className="p-2 pr-3  w-[240px] h-[160px] sm:w-[280px]  lg:w-[480px] border rounded-lg text-right focus:outline-none focus:border-primary focus:border-2"
+            rows={2}
+            className="p-2 pr-3  w-[240px] sm:w-[400px] md:w-[650px]  lg:w-[700px] xl:w-[900px] border rounded-lg text-right focus:outline-none focus:border-primary focus:border-2"
             id="message"
             name="message"
             placeholder="اكتب رسالتك هنا"
