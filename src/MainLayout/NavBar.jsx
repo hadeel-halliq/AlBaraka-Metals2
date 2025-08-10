@@ -20,7 +20,7 @@ export default function NavBar({ isOpen, onClick }) {
       NavContent.forEach((_, i) => {
         setTimeout(() => {
           setVisibleItems(prev => prev + 1);
-        }, i * 500); 
+        }, i * 300); 
       });
     } else {
       setVisibleItems(0);
