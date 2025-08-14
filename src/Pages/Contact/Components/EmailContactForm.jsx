@@ -42,12 +42,12 @@ export default function EmailContactForm() {
           animate="visible"
           className="w-fit flex flex-col gap-1 text-right lg:col-span-3"
         >
-          <label htmlFor="message" className="font-semibold">
+          <label htmlFor="message" className="font-semibold lg:mr-5 xl:mr-[23px]">
             الرسالة
           </label>
           <textarea
             rows={2}
-            className="p-2 pr-3  w-[240px] sm:w-[400px] md:w-[650px]  lg:w-[700px] xl:w-[900px] border rounded-lg text-right focus:outline-none focus:border-primary focus:border-2"
+            className="p-2 pr-3 w-[240px] sm:w-[280px] lg:w-[760px] lg:mr-4 xl:w-[890px] xl:mr-5 border rounded-lg text-right focus:outline-none focus:border-primary focus:border-2"
             id="message"
             name="message"
             placeholder="اكتب رسالتك هنا"

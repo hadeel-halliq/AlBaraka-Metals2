@@ -12,12 +12,11 @@ function App() {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/location" element={<Location/>} />
+        <Route path="/location" element={<Location />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
-
       </Route>
-        <Route path="*" element={<Error />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 }
