@@ -6,10 +6,10 @@ import { AiOutlineHome } from "react-icons/ai";
 
 export default function NavBar({ isOpen, onClick }) {
   const NavContent = [
+    { icon: <AiOutlineHome />, text: "الصفحة الرئيسية", to: "/" },
+    { icon: <CiLocationOn />, text: "موقع الشركة", to: "/location" },
     { icon: <BsTelephone />, text: "تواصل معنا", to: "/contact" },
     { icon: <AiOutlineHome />, text: "منتجاتنا", to: "/products" },
-    { icon: <CiLocationOn />, text: "موقع الشركة", to: "/location" },
-    { icon: <AiOutlineHome />, text: "الصفحة الرئيسية", to: "/" },
   ];
 
   const [visibleItems, setVisibleItems] = useState(0);
@@ -53,7 +53,7 @@ export default function NavBar({ isOpen, onClick }) {
       </div>
 
     
-      <nav className="hidden md:flex gap-5">
+      <nav className="hidden md:flex flex-row-reverse gap-5">
         {NavContent.map((item, index) => (
           <NavLink key={index} to={item.to}>
             <div className="flex items-center gap-1.5 text-lg font-bold">

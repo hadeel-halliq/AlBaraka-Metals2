@@ -2,7 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Locations({ mapSrc, imageSrc }) {
-  const style ="w-[260px]  sm:w-[290px] lg:w-[400px] xl:w-[480px]  md:h-[169px] lg:h-[234px] xl:h-[281px] rounded-xl";
+  const style =
+    "w-[200px] h-[150px] sm:w-[290px] lg:w-[400px] xl:w-[480px]  md:h-[169px] lg:h-[234px] xl:h-[281px] rounded-xl";
 
   const [show, setShow] = useState(false);
 
@@ -30,7 +31,7 @@ export default function Locations({ mapSrc, imageSrc }) {
   };
 
   return (
-    <div className="w-full overflow-hidden flex flex-col-reverse items-center gap-10 md:flex-row justify-center mt-9 flex-wrap">
+    <div className="w-full overflow-hidden flex flex-col-reverse items-center gap-10 md:flex-row justify-center mt-9 ">
       <AnimatePresence>
         {show && (
           <>
